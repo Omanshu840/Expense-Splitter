@@ -1,25 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react'
+import { Button, Container } from 'react-bootstrap';
+import { connect } from 'react-redux';
+import { ChangeScreenAction } from './actions';
+import AddExpense from './components/AddExpense';
+import AddMembers from './components/AddMembers'
+import Results from './components/Results';
+import { screens } from './constants';
 
-function App() {
+const App = (props) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Container style={{textAlign: 'center'}}>
+      {(props.screen === screens.ADD_MEMBERS.name) && <AddMembers/>}
+      {(props.screen === screens.ADD_MEMBERS.name) && 
+        <Button className="mt-3 btn-md" onClick={() => props.dispatch(ChangeScreenAction(screens[props.screen].next))}>
+          Add Expense <FontAwesomeIcon icon={faArrowRight} style={{marginLeft: '5px'}}/>
+        </Button>
+      }
+
+      {(props.screen === screens.ADD_EXPENSE.name) && <AddExpense/>}
+      {(props.screen === screens.ADD_EXPENSE.name) && 
+        <>
+          <Button className="mt-3 btn-md" onClick={() => props.dispatch(ChangeScreenAction(screens[props.screen].prev))} style={{marginRight: '7px'}}>
+            <FontAwesomeIcon icon={faArrowLeft} style={{marginRight: '5px'}}/> Back
+          </Button>
+          <Button className="mt-3 btn-md" onClick={() => props.dispatch(ChangeScreenAction(screens[props.screen].next))} style={{marginLeft: '7px'}}>
+            Split <FontAwesomeIcon icon={faArrowRight} style={{marginLeft: '5px'}}/>
+          </Button>
+        </>
+      }
+
+      {(props.screen === screens.RESULTS.name) && <Results/>}
+      {(props.screen === screens.RESULTS.name) &&
+        <Button className="mt-3 btn-md" onClick={() => props.dispatch(ChangeScreenAction(screens[props.screen].prev))}>
+          <FontAwesomeIcon icon={faArrowLeft} style={{marginRight: '5px'}}/> Edit Expense
+        </Button>
+      }
+    </Container>
+  )
 }
 
-export default App;
+const mapStateToProps = state => ({
+  screen: state.screen
+});
+
+const mapDispatchToProps = dispatch => ({
+  dispatch
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
