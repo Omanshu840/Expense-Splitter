@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Expense-Splitter/static/css/main.0f6dd7f4.css",
-    "main.js": "/Expense-Splitter/static/js/main.504d523a.js",
+    "main.css": "/Expense-Splitter/static/css/main.a1721ff1.css",
+    "main.js": "/Expense-Splitter/static/js/main.2bfa8d83.js",
     "index.html": "/Expense-Splitter/index.html",
-    "main.0f6dd7f4.css.map": "/Expense-Splitter/static/css/main.0f6dd7f4.css.map",
-    "main.504d523a.js.map": "/Expense-Splitter/static/js/main.504d523a.js.map"
+    "main.a1721ff1.css.map": "/Expense-Splitter/static/css/main.a1721ff1.css.map",
+    "main.2bfa8d83.js.map": "/Expense-Splitter/static/js/main.2bfa8d83.js.map"
   },
   "entrypoints": [
-    "static/css/main.0f6dd7f4.css",
-    "static/js/main.504d523a.js"
+    "static/css/main.a1721ff1.css",
+    "static/js/main.2bfa8d83.js"
   ]
 }
