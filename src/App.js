@@ -1,6 +1,6 @@
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { Button, Container } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { ChangeScreenAction } from './actions';
@@ -10,8 +10,6 @@ import Results from './components/Results';
 import { screens } from './constants';
 
 const App = (props) => {
-
-  const [mode, setMode] = useState();
 
   useEffect(() => {
     if(window.matchMedia('(prefers-color-scheme: dark)').matches) {

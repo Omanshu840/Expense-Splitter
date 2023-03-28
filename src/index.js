@@ -8,8 +8,7 @@ import './index.css'
 import rootReducer from './reducer';
 import { screens } from './constants';
 
-
-const initialState = {
+let initialState = {
   alert: {
     showAlert: false,
     alertMessage: ""
@@ -19,7 +18,17 @@ const initialState = {
   items: []
 }
 
-const store = createStore(rootReducer, initialState);
+let localStorageState = JSON.parse(localStorage.getItem('reduxState'));
+
+if(localStorageState!=null) {
+  localStorageState = {
+    ...localStorageState,
+    screen: screens.ADD_MEMBERS.name
+  }
+  initialState = localStorageState
+}
+
+const store = createStore(rootReducer, initialState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

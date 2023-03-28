@@ -39,7 +39,8 @@ const Results = (props) => {
         })
 
         setResult(tempResult);
-    }, [props.items, props.members])
+        localStorage.setItem('reduxState', JSON.stringify(props.state))
+    }, [props.items, props.members, props.state])
 
     if(result.length === 0) {
         return (
@@ -100,6 +101,7 @@ const Results = (props) => {
 }
 
 const mapStateToProps = state => ({
+    state: state,
     members: state.members,
     items: state.items
 });

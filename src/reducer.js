@@ -42,6 +42,13 @@ const rootReducer = (state, action) => {
             }
         }
 
+        case Actions.CLEAR_ITEMS: {
+            return {
+                ...state,
+                items: []
+            }
+        }
+
         case Actions.SET_ALERT: {
             return {
                 ...state,

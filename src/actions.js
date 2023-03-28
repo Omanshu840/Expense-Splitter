@@ -5,7 +5,8 @@ export const Actions = {
     ADD_ITEM: "ADD_ITEM",
     DELETE_ITEM: "DELETE_ITEM",
     SET_ALERT: "SET_ALERT",
-    CLOSE_ALERT: "CLOSE_ALERT"
+    CLOSE_ALERT: "CLOSE_ALERT",
+    CLEAR_ITEMS: "CLEAR_ITEMS",
 };
   
 export const AddMemberAction = member => ({
@@ -34,6 +35,10 @@ export const AddItemAction = item => ({
 export const DeleteItemAction = uuid => ({
     type: Actions.DELETE_ITEM,
     payload: uuid
+})
+
+export const ClearItemsAction = () => ({
+    type: Actions.CLEAR_ITEMS
 })
 
 export const SetAlertAction = alert => ({

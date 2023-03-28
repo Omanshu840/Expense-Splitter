@@ -1,10 +1,10 @@
-import { faIndianRupeeSign} from '@fortawesome/free-solid-svg-icons';
+import { faIndianRupeeSign, faRefresh} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react'
 import { v4 as uuidV4 } from 'uuid';
 import { Alert, Button, Card, Col, Form, Row, Tab, Tabs } from 'react-bootstrap';
 import { connect } from 'react-redux';
-import { AddItemAction, CloseAlertAction, DeleteItemAction, SetAlertAction } from '../actions';
+import { AddItemAction, ClearItemsAction, CloseAlertAction, DeleteItemAction, SetAlertAction } from '../actions';
 
 const AddExpense = (props) => {
 
@@ -95,6 +95,7 @@ const AddExpense = (props) => {
                     {props.alert.alertMessage}
                 </Alert>
             }
+            <Button className="add-expense-refresh-btn" onClick={() => props.dispatch(ClearItemsAction())}><FontAwesomeIcon icon={faRefresh}/></Button>
             <h1 className="mt-5 mb-4">Add Expense</h1>
             {props.items.map((item) => {
                 return (
