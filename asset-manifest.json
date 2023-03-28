@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Expense-Splitter/static/css/main.fa71fef0.css",
-    "main.js": "/Expense-Splitter/static/js/main.ffad4068.js",
+    "main.js": "/Expense-Splitter/static/js/main.c1a12109.js",
     "index.html": "/Expense-Splitter/index.html",
     "main.fa71fef0.css.map": "/Expense-Splitter/static/css/main.fa71fef0.css.map",
-    "main.ffad4068.js.map": "/Expense-Splitter/static/js/main.ffad4068.js.map"
+    "main.c1a12109.js.map": "/Expense-Splitter/static/js/main.c1a12109.js.map"
   },
   "entrypoints": [
     "static/css/main.fa71fef0.css",
-    "static/js/main.ffad4068.js"
+    "static/js/main.c1a12109.js"
   ]
 }
