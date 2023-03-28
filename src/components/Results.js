@@ -43,7 +43,9 @@ const Results = (props) => {
 
     if(result.length === 0) {
         return (
-            <h1>Loading...</h1>
+            <div className="result-tile mb-3 mt-2" style={{textAlign: 'center'}}>
+                No Members added
+            </div>
         )
     }
 

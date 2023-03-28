@@ -1,16 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+
+.light-mode {
+    --baseColor: white;
+    --priColor1: #F5FCFF;
+    --priColor2: #C9EEFF;
+    --secColor1: #00235B;
+    --btnColor: #0E6DFD;
+    --borderColor: #ced4da;
+}
+
+.dark-mode {
+    --baseColor: #121212;
+    --priColor1: #222831;
+    --priColor2: #393E46;
+    --secColor1: #05C5C0;
+    --btnColor: #797A7F;
+    --borderColor: #6a6c6e;
+}
+
+:root {
+    background-color: var(--priColor1);
+    color: var(--secColor1);
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #F5FCFF;
-    color: #00235B;
+    background-color: var(--priColor1);
+    color: var(--secColor1);
     margin-bottom: 50px;
 }
 
+.alert {
+    position: fixed;
+    top: 2px;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 95%; 
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border: none;
+    background-color: #D0342C;
+    color: white;
+}
+
 .member-tile {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
-    background-color: #C9EEFF;
+    background-color: var(--priColor2);
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border-radius: 10px;
     padding: 10px;
@@ -31,7 +69,7 @@ body {
 
 .add-member span {
     border-width: 0px;
-    background-color: #C9EEFF;
+    background-color: var(--priColor2);
     color: #00235B;
 }
 
@@ -40,12 +78,12 @@ body {
     width: 80%;
     margin: auto;
     padding: 10px;
-    background-color: #C9EEFF;
+    background-color: var(--priColor2);
     border-radius: 10px;
 }
 
 .item-tile .item {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
 }
 
@@ -58,10 +96,30 @@ body {
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     width: 80%;
     padding: 30px 15px;
+    background-color: var(--baseColor);
 }
 
 .add-expense-tile input {
     font-size: 18px;
+    background-color: var(--baseColor);
+    color: var(--secColor1);
+    /* border: none; */
+    border-color:  var(--borderColor);
+    /* border: #6a6c6e; */
+}
+
+.add-expense-tile input:focus {
+    background-color: var(--priColor1);
+    color: var(--secColor1);
+}
+
+.add-expense-tile .nav-item .nav-link{
+    color: var(--secColor1);
+}
+
+.add-expense-tile .nav-item .active {
+    background-color: var(--btnColor);
+    color: var(--baseColor);
 }
 
 .add-expense-tile .checkboxes {
@@ -71,7 +129,7 @@ body {
 .result-tile {
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     text-align: left;
-    background-color: white;
+    background-color: var(--baseColor);
     padding: 15px;
     border-radius: 10px;
 }
@@ -86,4 +144,10 @@ body {
 
 .total svg {
     font-size: 19px;
+}
+
+.btn {
+    background-color: var(--btnColor);
+    border: var(--btnColor);
+    color: var(--baseColor);
 }

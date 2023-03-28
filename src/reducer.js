@@ -14,6 +14,13 @@ const rootReducer = (state, action) => {
             }
         }
 
+        case Actions.DELETE_MEMBER: {
+            return {
+                ...state,
+                members: state.members.filter(member => member.id!==action.payload)
+            }
+        }
+
         case Actions.CHANGE_SCREEN: {
             return {
                 ...state,
@@ -25,6 +32,30 @@ const rootReducer = (state, action) => {
             return {
                 ...state,
                 items: [...state.items, action.payload]
+            }
+        }
+
+        case Actions.DELETE_ITEM: {
+            return {
+                ...state,
+                items: state.items.filter(item => item.id!==action.payload)
+            }
+        }
+
+        case Actions.SET_ALERT: {
+            return {
+                ...state,
+                alert: action.payload
+            }
+        }
+
+        case Actions.CLOSE_ALERT: {
+            return {
+                ...state,
+                alert: {
+                    showAlert: false,
+                    alertMessage: ""
+                }
             }
         }
   

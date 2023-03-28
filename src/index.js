@@ -10,6 +10,10 @@ import { screens } from './constants';
 
 
 const initialState = {
+  alert: {
+    showAlert: false,
+    alertMessage: ""
+  },
   screen: screens.ADD_MEMBERS.name,
   members: [],
   items: []
